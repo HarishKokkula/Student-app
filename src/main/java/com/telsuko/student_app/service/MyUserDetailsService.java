@@ -1,0 +1,28 @@
+package com.telsuko.student_app.service;
+
+import com.telsuko.student_app.entity.Users;
+import com.telsuko.student_app.repo.UserRepo;
+import com.telsuko.student_app.security.UserPrinciples;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyUserDetailsService implements UserDetailsService {
+
+    private final UserRepo userRepo;
+
+    public MyUserDetailsService(UserRepo userRepo) {
+        this.userRepo = userRepo;
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Users user = userRepo.findByUsername(username);
+        if (user == null) {
+            throw new UsernameNotFoundException("User not found");
+        }
+        return new UserPrinciples(user);
+    }
+}

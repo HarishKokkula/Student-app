@@ -1,0 +1,10 @@
+INSERT INTO student (name, age) VALUES ('Navin',20);
+INSERT INTO student (name, age) VALUES ('Kiran',22);
+INSERT INTO student (name, age) VALUES ('Harsh',30);
+INSERT INTO student (name, age) VALUES ('Sushil',12);
+INSERT INTO student (name, age) VALUES ('Naveena',20);
+INSERT INTO student (name, age) VALUES ('Kiranmai',22);
+INSERT INTO student (name, age) VALUES ('Harish',30);
+INSERT INTO student (name, age) VALUES ('Sushila',12);
+INSERT INTO student (name, age) VALUES ('Alex', 20);
+INSERT INTO student (name, age) VALUES ('Sam', 22);
